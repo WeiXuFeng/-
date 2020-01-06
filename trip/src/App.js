@@ -6,18 +6,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          用户后台管理系统
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>
+          用户名:admin
+          密码:123456
+          原网址:<a href="http://mcrm.fctaobao.cn/admin/index/index.html#/admin/main/index.html">http://mcrm.fctaobao.cn/admin/index/index.html#/admin/main/index.html</a>
+        </p>
+        <p>记住网站后可以修改了,删掉这些</p>
       </header>
     </div>
   );
