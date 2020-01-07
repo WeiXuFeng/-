@@ -2,3 +2,42 @@ http://mcrm.fctaobao.cn/admin/index/index.html#/admin/main/index.html
 名称:客户管理系统
 账号:admin
 密码:123456
+
+1. 登录接口:39.97.100.132:8080/v1/admin/user/login
+userName:admin
+passWord:123   
+可以请求通.........
+2.
+
+
+
+
+
+客户管理系统：
+字段：
+	用户列表:    post      
+		user ： string
+		id     ： string
+		token：string
+		请求回来：
+		user，id，time，center 【
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
