@@ -10,7 +10,7 @@ class Nav extends React.Component{
       super()
       this.state={
         List:[],
-        icon:[{id:1,icon:"home",path:"/admin/home"},{id:2,icon:"file",path:"/admin/file"},{id:3,icon:"delete"},{id:4,icon:"sync"}],
+        icon:[{id:1,icon:"home",path:"/admin/home"},{id:2,icon:"file",path:"/admin/file"},{id:3,icon:"delete",path:"/admin/delete"},{id:4,icon:"sync",path:"/admin/sync"}],
       }
     }
     componentDidMount(){  
@@ -48,7 +48,7 @@ class Nav extends React.Component{
       <Fragment>
           <div className={styles.admin_Icon}>
               {this.state.icon.map((item)=>{
-                  return (<Link to={item.path}><Icon type={item.icon} theme="filled" key={item.id}/></Link>)
+                  return (<Link to={item.path}><Icon type={item.icon} key={item.id}/></Link>)
               })}
           </div>
        <Menu
