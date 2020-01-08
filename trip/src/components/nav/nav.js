@@ -2,6 +2,7 @@ import React,{Fragment}  from "react"
 import {  Menu,  Icon } from 'antd';
 import styles from "../../page/admin/admin.module.less"
 import List from "./data"
+import {Link} from "react-router-dom"
 const { SubMenu } = Menu;
 
 class Nav extends React.Component{
@@ -9,14 +10,13 @@ class Nav extends React.Component{
       super()
       this.state={
         List:[],
-        icon:[{id:1,icon:"home"},{id:2,icon:"file"},{id:3,icon:"delete"},{id:4,icon:"sync"}],
+        icon:[{id:1,icon:"home",path:"/admin/home"},{id:2,icon:"file",path:"/admin/file"},{id:3,icon:"delete"},{id:4,icon:"sync"}],
       }
     }
     componentDidMount(){  
       this.setState({List:List})
     }
       navdata(item,index){
-
           if(item.children){
               return (<SubMenu key={index}
                   title={
@@ -34,8 +34,12 @@ class Nav extends React.Component{
               return (
               <Menu.Item key={index}> 
               <span>
-               <Icon type={item.type} />
-                {item.name}</span>
+              <Link to={item.path}>
+                 <Icon type={item.type} />
+                 {item.name}
+              </Link>
+                </span>
+
               </Menu.Item>)
           }
       }
@@ -44,7 +48,7 @@ class Nav extends React.Component{
       <Fragment>
           <div className={styles.admin_Icon}>
               {this.state.icon.map((item)=>{
-                  return (<Icon type={item.icon} theme="filled" key={item.id}/>)
+                  return (<Link to={item.path}><Icon type={item.icon} theme="filled" key={item.id}/></Link>)
               })}
           </div>
        <Menu

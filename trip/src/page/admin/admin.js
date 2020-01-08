@@ -5,7 +5,6 @@ import Nav from "../../components/nav/nav"
 const { Header, Content, Sider } = Layout;
 const arr=[{id:1,name:"网站信息",type:"setting", path:""},{id:2,name:"个人信息",type:"user",path:""},{id:3,name:"密码修改",type:"user",path:""},{id:4,name:"退出",type:"logout",path:""}]
 class Admin  extends React.Component{
-    
     render(){
       console.log(this.props.children)
         return(

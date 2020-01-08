@@ -5,15 +5,19 @@ let list=[{
       children: [{
         name: "网站信息",
         type: "caret-right",
-        id:"0-0"
+        id:"0-0",
+        path:"/admin/info"
+
     },{
         name: "上传设置",
         type: "caret-right",
-        id:"0-1"
+        id:"0-1",
+        path:"/admin/updateSetting"
     },{
         name: "文件存储",
         type: "caret-right",
-        id:"0-2"
+        id:"0-2",
+        path:"/admin/file"
     }]
 }, {
     name: "用户管理",
@@ -26,24 +30,32 @@ let list=[{
         children: [{
             name: "角色管理",
             type: "caret-right",
-            id:"1-0-1"
+            id:"1-0-1",
+            path:"/admin/role"
+
         },{
             name: "员工列表",
             type: "caret-right",
-            id:"1-0-2"
+            id:"1-0-2",
+            path:"/admin/Employee"
+
         },{
             name: "登录日志",
             type: "caret-right",
-            id:"1-0-3"
+            id:"1-0-3",
+            path:"/admin/logging"
         }]
     }]
 }, {
     name: "客户管理",
     type: "setting",
     id:"2",
+    path:"/admin/Customer"
+
 },{
     name: "跟单记录",
     type: "history",
     id:"3",
+    path:"/admin/records"
 }]
 export default list
