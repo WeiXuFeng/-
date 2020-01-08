@@ -7,6 +7,7 @@ const arr=[{id:1,name:"网站信息",type:"setting", path:""},{id:2,name:"个人
 class Admin  extends React.Component{
     
     render(){
+      console.log(this.props.children)
         return(
      <Layout className={styles.admin_wraper}>
          {/* 这是头部 */}
@@ -50,7 +51,7 @@ class Admin  extends React.Component{
           minHeight: 280,
         }}
       >
-        Content
+        {this.props.children}
       </Content>
     </Layout>
   </Layout>

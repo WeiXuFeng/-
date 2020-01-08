@@ -1,5 +1,4 @@
 import React,{Fragment} from 'react';
-import logo from './logo.svg';
 import Router from './Router/Router.js'
 function App() {
   return (
