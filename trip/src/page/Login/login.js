@@ -3,6 +3,7 @@ import {} from 'react-router-dom'
 import { Form, Icon, Input, Button, Checkbox,message } from 'antd';
 import Img from './xinkong4k.jpg'
 import './sign.less'
+import {UserLogin} from './../../api/api'
 class Login extends Component{
    login=()=>{
        let {getFieldsValue,validateFields} = this.props.form
@@ -11,7 +12,21 @@ class Login extends Component{
         if(err){
             message.err('用户输入不正确')
         }else{
-            
+            UserLogin(data.Username,data.Password)
+            .then((res)=>{
+                 console.log(res)
+                if(res.err===0){
+                    message.info('登录成功,3秒后跳转',()=>{
+                        this.props.history.replace('/admin/home')
+                    })
+                    this.props.history.replace()
+                }else{
+                    message.error('密码错误')
+                }
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
         }
     })
    }
