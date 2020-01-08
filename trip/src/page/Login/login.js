@@ -17,7 +17,7 @@ class Login extends Component{
             .then((res)=>{
                  console.log(res)
                 if(res.err===0){
-                    message.info('登录成功,3秒后跳转',()=>{
+                    message.info('登录成功',1,()=>{
                         let token =res.token
                         setItem('user_token',token)
                         this.props.history.replace('/admin/home')
@@ -38,7 +38,6 @@ class Login extends Component{
            <Fragment>
     {/* // const { getFieldDecorator } = this.props.form; */}
             <div className="layout">
-            <img src={Img} alt="" className="img" />
                 <Form onSubmit={this.handleSubmit} className="login-form sign_dv">
                     <Form.Item className="user_input">
                         {getFieldDecorator('Username',{
