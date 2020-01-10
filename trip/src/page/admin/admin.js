@@ -1,5 +1,5 @@
 import React from  "react"
-import { Layout,Menu, Icon,Dropdown,message} from 'antd';
+import { Layout,Menu, Icon,Dropdown} from 'antd';
 import styles from "./admin.module.less"
 import Nav from "../../components/nav/nav"
 const { Header, Content, Sider } = Layout;
@@ -31,7 +31,7 @@ class Admin  extends React.Component{
                 )
                
               }}>
-                <a >你好,admin</a>
+                <span>你好,admin</span>
          </Dropdown>   
      </div>
   </Header>
@@ -46,7 +46,6 @@ class Admin  extends React.Component{
             margin: '16px 0' ,
           background: '#fff',
           padding: 24,
-          margin: 0,
           minHeight: 280,
         }}
       >

@@ -1,13 +1,12 @@
 import React,{Component,Fragment} from 'react'
 import {withRouter} from 'react-router-dom'
-import { Form, Icon, Input, Button, Checkbox,message } from 'antd';
-import Img from './xinkong4k.jpg'
+import { Form, Icon, Input, Button,message } from 'antd';
 import './sign.less'
 import {UserLogin} from './../../api/user'
 import {setItem} from '../../utils/webStorage'
 class Login extends Component{
    login=()=>{
-       let {getFieldsValue,validateFields} = this.props.form
+       let {validateFields} = this.props.form
     //    console.log(getFieldsValue())
     validateFields((err,data)=>{
         if(err){
