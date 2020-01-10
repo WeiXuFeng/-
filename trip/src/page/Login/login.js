@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom'
 import { Form, Icon, Input, Button, Checkbox,message } from 'antd';
 import Img from './xinkong4k.jpg'
 import './sign.less'
-import {UserLogin} from './../../api/api'
+import {UserLogin} from './../../api/user'
 import {setItem} from '../../utils/webStorage'
 class Login extends Component{
    login=()=>{
