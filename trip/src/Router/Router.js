@@ -39,7 +39,7 @@ class Router extends Component{
                            }}></Route>
                        </Switch>
                     </Admin>
-                 )
+                 )             
                 }}></Route>
                 <Redirect exact from="/" to="/login"></Redirect>
                 <Route  render={()=>{
