@@ -11,8 +11,8 @@ class Home extends React.Component{
                         this.props.history.push('/admin/info')
                     }}>网站信息</Button>
                     <Button type='primary' className={styles.button} onClick={()=>{
-                        this.props.history.push('/admin/updateSetting')
-                    }}>内容上传</Button>
+                        this.props.history.push('/admin/Customer')
+                    }}>客户管理</Button>
                     <Button type="danger" className={styles.button} onClick={()=>{
                         this.props.history.push('/admin/role')
                     }}>角色管理</Button>

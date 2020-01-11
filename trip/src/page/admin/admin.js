@@ -16,13 +16,18 @@ class Admin  extends React.Component{
       case 2:
         this.props.history.push('/admin/Employee')
         break;
-      default:
+      case 3:
+        console.log('修改密码')
+        break;
+      case 4:
         let uid=getItem("uid")||""
         UserLogout(uid)
         .then(()=>{
           clear()
           this.props.history.replace('/login')
         })
+        break;
+      default :
         break;
     }
   }
