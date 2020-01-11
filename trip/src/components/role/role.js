@@ -31,7 +31,7 @@ class Role extends React.Component{
                     key:"state",
                     render(data){
                       return (
-                        <Button type="danger">{data}</Button>
+                        <span >{data}</span>
                       )
                     }
                   },
@@ -93,7 +93,7 @@ class Role extends React.Component{
           </span>
         </div>
     <Spin  spinning={this.state.loading}>
-        <Table  rowKey="_id" columns={this.state.columns} dataSource={this.state.data} />
+        <Table  rowKey="_id" columns={this.state.columns} dataSource={this.state.data}  pagination={false}/>
     </Spin>
       </div>
     </Card>
