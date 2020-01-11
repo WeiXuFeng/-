@@ -9,7 +9,7 @@ let list=[{
         path:"/admin/info"
 
     },{
-        name: "上传设置",
+        name: "内容上传",
         type: "caret-right",
         id:"0-1",
         path:"/admin/updateSetting"

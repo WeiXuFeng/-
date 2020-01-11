@@ -16,7 +16,7 @@ export const UserLogin=(userName,passWord) =>{
 export const UserLogout=(uId) =>{
     return new Promise((reslove,reject)=>{
         let url="/hehe/v1/admin/user/logout"
-        axios.post(url,uId)
+        axios.post(url,{uId})
         .then((res)=>{
             reslove(res)
         })

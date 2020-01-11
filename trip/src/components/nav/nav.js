@@ -32,7 +32,7 @@ class Nav extends React.Component{
               </SubMenu>)
           }else{
               return (
-              <Menu.Item key={index}> 
+              <Menu.Item key={item.id}> 
               <span>
               <Link to={item.path}>
                  <Icon type={item.type} />
@@ -52,7 +52,7 @@ class Nav extends React.Component{
               })}
           </div>
        <Menu
-       mode="inline">
+         mode="inline">
            {this.state.List.map((item,index)=>{
              return   this.navdata(item,index)
            })}
