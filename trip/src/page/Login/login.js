@@ -7,7 +7,10 @@ import {setItem} from '../../utils/webStorage'
 class Login extends Component{
    login=()=>{
        let {validateFields} = this.props.form
+<<<<<<< HEAD
+=======
     //    console.log(getFieldsValue())
+>>>>>>> df29d6a3e5c0924bc0259bd7661ba00ef5ef04a0
     validateFields((err,data)=>{
         if(err){
             message.err('用户输入不正确')
@@ -36,8 +39,13 @@ class Login extends Component{
         return(
            <Fragment>
     {/* // const { getFieldDecorator } = this.props.form; */}
+            
             <div className="layout">
+               
                 <Form onSubmit={this.handleSubmit} className="login-form sign_dv">
+                    <div className="name_login">
+                        <p>客户管理系统</p>
+                    </div>
                     <Form.Item className="user_input">
                         {getFieldDecorator('Username',{
                              rules: [{ required: true, message: '密码不能为空' }]
