@@ -1,15 +1,13 @@
 import React,{Component,Fragment} from 'react'
 import {withRouter} from 'react-router-dom'
-import { Form, Icon, Input, Button, Checkbox,message } from 'antd';
-import Img from './xinkong4k.jpg'
+import { Form, Icon, Input, Button,message } from 'antd';
 import './sign.less'
-import {UserLogin} from './../../api/api'
+import {UserLogin} from './../../api/user'
 import {setItem} from '../../utils/webStorage'
 class Login extends Component{
    login=()=>{
-       let {getFieldsValue,validateFields} = this.props.form
-    //    console.log(getFieldsValue())
-    validateFields((err,data)=>{
+       let {validateFields} = this.props.form
+     validateFields((err,data)=>{
         if(err){
             message.err('用户输入不正确')
         }else{
@@ -37,8 +35,13 @@ class Login extends Component{
         return(
            <Fragment>
     {/* // const { getFieldDecorator } = this.props.form; */}
+            
             <div className="layout">
+               
                 <Form onSubmit={this.handleSubmit} className="login-form sign_dv">
+                    <div className="name_login">
+                        <p>客户管理系统</p>
+                    </div>
                     <Form.Item className="user_input">
                         {getFieldDecorator('Username',{
                              rules: [{ required: true, message: '密码不能为空' }]
