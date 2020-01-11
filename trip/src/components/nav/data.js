@@ -53,7 +53,7 @@ let list=[{
     path:"/admin/Customer"
 
 },{
-    name: "跟单记录",
+    name: "数据视图",
     type: "history",
     id:"3",
     path:"/admin/records"
