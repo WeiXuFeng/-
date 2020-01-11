@@ -1,5 +1,5 @@
 import React ,{Fragment} from "react"
-import { Tabs,Table, Button ,Popconfirm,message,Spin,Card} from 'antd';
+import { Tabs,Table, Button ,Popconfirm,message,Spin,Card,Pagination} from 'antd';
 import  {getrole,delrole,addrole}  from "../../api/role"
 const { TabPane } = Tabs;
 
@@ -10,6 +10,10 @@ class Role extends React.Component{
     constructor(){
         super();
         this.state={
+          page:1,
+          total:0,
+          pageSize:3,
+          current:1,
           name:"",
           des:"",
           state:"已禁用",
@@ -43,7 +47,9 @@ class Role extends React.Component{
                        return ( 
                           <div>
                         <Button disabled  type="primary" >权限设置</Button>
-                        <Button type="primary">编辑</Button>
+                        <Button type="primary" onClick={()=>{
+                          message.info("暂无权限,请关注官方最新消息")
+                        }}>编辑</Button>
                         <Popconfirm  
                         title="你确定要删除吗?"
                         onConfirm={()=>{
@@ -77,7 +83,11 @@ class Role extends React.Component{
       this.getTabledata()
       }
       getTabledata(){
-          getrole().then((data)=>{this.setState({data:data.list.roles,loading:false})})
+          getrole(this.state.page,this.state.pageSize)
+          .then((data)=>{
+            console.log(data)
+            this.setState({data:data.list.roles,loading:false,total:data.list.allCount})
+          })
           .catch((err)=>{console.log(err)})
       }
     render(){
@@ -94,6 +104,14 @@ class Role extends React.Component{
         </div>
     <Spin  spinning={this.state.loading}>
         <Table  rowKey="_id" columns={this.state.columns} dataSource={this.state.data}  pagination={false}/>
+        <Pagination total={this.state.total} pageSize={this.state.pageSize}   onChange={(newPage,pageSize)=>{
+           getrole(newPage,pageSize)
+           .then((data)=>{
+             console.log(data)
+             this.setState({data:data.list.roles,loading:false,total:data.list.allCount})
+           })
+           .catch((err)=>{console.log(err)})
+        }}></Pagination>
     </Spin>
       </div>
     </Card>

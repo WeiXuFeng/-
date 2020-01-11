@@ -1,10 +1,10 @@
 import axios from '../utils/axios'
 
 // 获取角色列表
-export const getrole=(token) =>{
+export const getrole=(page,pageSize,token) =>{
     return new Promise((reslove,reject)=>{
         let url="/hehe/v1/admin/role/getrole"
-        axios.post(url,{token})
+        axios.post(url,{token,page,pageSize})
         .then((res)=>{
             reslove(res)
         })
