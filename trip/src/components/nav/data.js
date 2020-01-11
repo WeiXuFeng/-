@@ -20,7 +20,7 @@ let list=[{
         path:"/admin/file"
     }]
 }, {
-    name: "用户管理",
+    name: "管理",
     type: "user",
     id:"1",
     children: [{
@@ -40,7 +40,7 @@ let list=[{
             path:"/admin/Employee"
 
         },{
-            name: "登录日志",
+            name: "添加新员工",
             type: "caret-right",
             id:"1-0-3",
             path:"/admin/logging"
@@ -53,7 +53,7 @@ let list=[{
     path:"/admin/Customer"
 
 },{
-    name: "跟单记录",
+    name: "数据视图",
     type: "history",
     id:"3",
     path:"/admin/records"
