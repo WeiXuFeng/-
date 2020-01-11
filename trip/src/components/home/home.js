@@ -5,7 +5,7 @@ import styles from './home.module.less'
 class Home extends React.Component{
     render(){
         return(
-            <Card title='商品管理信息'>
+            <Card title='用户管理信息'>
                 <div className={styles.box}>
                     <Button type="danger" className={styles.button} onClick={()=>{
                         this.props.history.replace('/admin/records')
