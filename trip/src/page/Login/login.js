@@ -7,11 +7,7 @@ import {setItem} from '../../utils/webStorage'
 class Login extends Component{
    login=()=>{
        let {validateFields} = this.props.form
-<<<<<<< HEAD
-=======
-    //    console.log(getFieldsValue())
->>>>>>> df29d6a3e5c0924bc0259bd7661ba00ef5ef04a0
-    validateFields((err,data)=>{
+     validateFields((err,data)=>{
         if(err){
             message.err('用户输入不正确')
         }else{
