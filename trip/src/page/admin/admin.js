@@ -12,7 +12,7 @@ class Admin  extends React.Component{
          {/* 这是头部 */}
        <Header className={styles.admin_header}>
            {/* 这是logo */}
-        <h2 className={styles.admin_header_logo}>商品管理系统</h2>
+        <h2 className={styles.admin_header_logo}>客户管理系统</h2>
         <div>
         <Dropdown overlay={()=>{
                 return (
