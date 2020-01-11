@@ -2,9 +2,30 @@ import React from  "react"
 import { Layout,Menu, Icon,Dropdown} from 'antd';
 import styles from "./admin.module.less"
 import Nav from "../../components/nav/nav"
+import {getItem,clear} from '../../utils/webStorage'
+import {UserLogout} from '../../api/user'
+import {withRouter} from 'react-router-dom'
 const { Header, Content, Sider } = Layout;
 const arr=[{id:1,name:"网站信息",type:"setting", path:""},{id:2,name:"个人信息",type:"user",path:""},{id:3,name:"密码修改",type:"user",path:""},{id:4,name:"退出",type:"logout",path:""}]
 class Admin  extends React.Component{
+  jump(id){
+    switch(id){
+      case 1:
+        this.props.history.push('/admin/info')
+        break;
+      case 2:
+        this.props.history.push('/admin/Employee')
+        break;
+      default:
+        let uid=getItem("uid")||""
+        UserLogout(uid)
+        .then(()=>{
+          clear()
+          this.props.history.replace('/login')
+        })
+        break;
+    }
+  }
     render(){
       console.log(this.props.children)
         return(
@@ -19,7 +40,7 @@ class Admin  extends React.Component{
                   <Menu>
                       {arr.map((item)=>{
                         return (
-                          <Menu.Item key={item.id}>
+                          <Menu.Item key={item.id} onClick={this.jump.bind(this,item.id)}>
                          <span>
                         <Icon type={item.type}></Icon>
                         {item.name}
@@ -57,7 +78,7 @@ class Admin  extends React.Component{
         )
     }
 }
-export default Admin 
+export default withRouter(Admin) 
 
 
 
