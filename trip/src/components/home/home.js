@@ -7,10 +7,18 @@ class Home extends React.Component{
         return(
             <Card title='商品管理信息'>
                 <div className={styles.box}>
-                    <Button type="danger" className={styles.button}>客户信息</Button>
-                    <Button type='primary' className={styles.button}>客户信息</Button>
-                    <Button type="danger" className={styles.button}>客户信息</Button>
-                    <Button type='primary' className={styles.button}>客户信息</Button>
+                    <Button type="danger" className={styles.button} onChange={()=>{
+                        this.props.history.replace('/admin/records')
+                    }}>客户信息</Button>
+                    <Button type='primary' className={styles.button} onChange={()=>{
+                        this.props.history.replace('/admin/records')
+                    }}>客户信息</Button>
+                    <Button type="danger" className={styles.button} onChange={()=>{
+                        this.props.history.replace('admin/role')
+                    }}>角色管理</Button>
+                    <Button type='primary' className={styles.button} onChange={()=>{
+                        this.props.history.replace('admin/Employee')
+                    }}>员工列表</Button>
                     <Button type="danger" className={styles.button} onClick={()=>{
                         this.props.history.replace('/admin/records')
                     }}>数据视图</Button>
