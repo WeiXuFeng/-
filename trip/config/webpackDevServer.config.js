@@ -94,6 +94,13 @@ module.exports = function(proxy, allowedHost) {
         pathRewrite:{
           "^/hehe":'' 
         }
+      },
+      '/xxx':{
+        target:"http://api.avatardata.cn/ActNews/Query",
+        changeOrigin:true,
+        pathRewrite:{
+          "^/xxx":''
+        }
       }
     },
     before(app, server) {

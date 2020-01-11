@@ -1,7 +1,8 @@
 import React,{Component} from 'react'         
-import {HashRouter,Route,Switch,Redirect} from 'react-router-dom'
+import {HashRouter,Route,Switch,Redirect,Link} from 'react-router-dom'
 import  loadable from "../utils/loadable"
 import Admin from "../page/admin/admin"
+import Site from '../components/info/site/site'
 const Login=loadable(()=>import("../page/Login/login"))
 const Home=loadable(()=>import("../components/home/home"))
 const Info=loadable(()=>import("../components/info/info"))
@@ -45,7 +46,6 @@ class Router extends Component{
                 <Route  render={()=>{
                     return(<h1>404页面丢失</h1>)
                 }}></Route>
-                
             </Switch>
         </HashRouter>
     )
