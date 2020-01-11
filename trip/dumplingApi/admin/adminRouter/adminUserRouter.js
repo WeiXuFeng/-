@@ -36,8 +36,9 @@ router.post('/login',(req,res)=>{
 * @api {post} /user/logout  退出登录
 * @apiName /user/logout     退出登录
 * @apiGroup  user       
-* @apiParam {String} _id    用户名id
-* @apiParam {String} token   token
+
+* @apiParam {String} uid    用户id
+* @apiParam {String} token    token值
 * @apiSuccess {String}  mages  错误信息
 */
 router.post('/logout',(req,res)=>{
